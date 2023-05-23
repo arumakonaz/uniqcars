@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://userExtBrowse.caption"
+        focusComponent="userExtsTable"
+        messagesPack="kz.almaty.uniqcars.web.screens.userext">
+    <data readOnly="true">
+        <collection id="userExtsDc"
+                    class="kz.almaty.uniqcars.entity.UserExt">
+            <view extends="_minimal">
+                <property name="bonus"/>
+                <property name="bankCards" view="_minimal">
+                    <property name="number"/>
+                    <property name="expireDate"/>
+                    <property name="nameOnCard"/>
+                </property>
+                <property name="name"/>
+                <property name="firstName"/>
+                <property name="lastName"/>
+                <property name="middleName"/>
+            </view>
+            <loader id="userExtsDl">
+                <query>
+                    <![CDATA[select e from uniqcars_UserExt e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="userExtsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="userExtsTable"
+                dataLoader="userExtsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="userExtsTable"
+                    width="100%"
+                    dataContainer="userExtsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="login"/>
+                <column id="name"/>
+                <column id="firstName"/>
+                <column id="lastName"/>
+                <column id="middleName"/>
+                <column id="bonus"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="userExtsTable.create"/>
+                <button id="editBtn" action="userExtsTable.edit"/>
+                <button id="removeBtn" action="userExtsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

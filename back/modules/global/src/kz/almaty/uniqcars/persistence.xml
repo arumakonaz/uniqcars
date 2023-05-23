@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="uniqcars" transaction-type="RESOURCE_LOCAL">
+
+        <class>kz.almaty.uniqcars.entity.AbstractEntity</class>
+        <class>kz.almaty.uniqcars.entity.AbstractDictionary</class>
+        <class>kz.almaty.uniqcars.entity.DicItemType</class>
+        <class>kz.almaty.uniqcars.entity.DicAdditionalType</class>
+        <class>kz.almaty.uniqcars.entity.Item</class>
+        <class>kz.almaty.uniqcars.entity.AdditionalData</class>
+        <class>kz.almaty.uniqcars.entity.UserExt</class>
+        <class>kz.almaty.uniqcars.entity.BankCard</class>
+        <class>kz.almaty.uniqcars.entity.ServiceLogger</class>
+        <class>kz.almaty.uniqcars.entity.Car</class>
+        <class>kz.almaty.uniqcars.entity.Order</class>
+        <class>kz.almaty.uniqcars.entity.Partner</class>
+        <class>kz.almaty.uniqcars.entity.ModelRange</class>
+        <class>kz.almaty.uniqcars.entity.Media</class>
+    </persistence-unit>
+</persistence>

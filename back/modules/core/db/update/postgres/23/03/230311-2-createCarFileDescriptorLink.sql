@@ -1,0 +1,2 @@
+alter table UNIQCARS_CAR_FILE_DESCRIPTOR_LINK add constraint FK_CARFILDES_ON_CAR foreign key (CAR_ID) references UNIQCARS_CAR(ID);
+alter table UNIQCARS_CAR_FILE_DESCRIPTOR_LINK add constraint FK_CARFILDES_ON_FILE_DESCRIPTOR foreign key (FILE_DESCRIPTOR_ID) references SYS_FILE(ID);

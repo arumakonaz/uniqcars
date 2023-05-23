@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:gui="http://schemas.haulmont.com/cuba/spring/cuba-gui.xsd">
+
+    <!-- Annotation-based beans -->
+    <context:component-scan base-package="kz.almaty.uniqcars"/>
+    
+    <gui:screens base-packages="kz.almaty.uniqcars.web"/>
+    <bean id="uniqcars_proxyCreator" class="com.haulmont.cuba.web.sys.remoting.WebRemoteProxyBeanCreator">
+        <property name="serverSelector" ref="cuba_ServerSelector"/>
+        <property name="remoteServices">
+            <map>
+                <entry key="uniqcars_CommonService" value="kz.almaty.uniqcars.service.CommonService"/>
+                <entry key="uniqcars_LoggerService" value="kz.almaty.uniqcars.service.LoggerService"/>
+                <entry key="uniqcars_ItemService" value="kz.almaty.uniqcars.service.ItemService"/>
+                <entry key="uniqcars_IntegrationService" value="kz.almaty.uniqcars.service.IntegrationService"/>
+                <entry key="uniqcars_FileDowloaderService" value="kz.almaty.uniqcars.service.FileDowloaderService"/>
+                <entry key="uniqcars_UserService" value="kz.almaty.uniqcars.service.UserService"/>
+                <entry key="uniqcars_EmailNotificationService"
+                       value="kz.almaty.uniqcars.service.EmailNotificationService"/>
+                <entry key="uniqcars_CarService" value="kz.almaty.uniqcars.service.CarService"/>
+                <entry key="uniqcars_BanCardService" value="kz.almaty.uniqcars.service.BanCardService"/>
+                <entry key="uniqcars_PartnerService" value="kz.almaty.uniqcars.service.PartnerService"/>
+                <entry key="uniqcars_FileDescriptorService" value="kz.almaty.uniqcars.service.FileDescriptorService"/>
+                <entry key="uniqcars_LocationService" value="kz.almaty.uniqcars.service.LocationService"/>
+                <entry key="uniqcars_OrderService" value="kz.almaty.uniqcars.service.OrderService"/>
+                <entry key="uniqcars_PayPalService" value="kz.almaty.uniqcars.service.PayPalService"/>
+                <entry key="uniqcars_NotificationService" value="kz.almaty.uniqcars.service.NotificationService"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,1 @@
+drop table UNIQCARS_ABSTRACT_ENTITY_FILE_DESCRIPTOR_LINK__U75086 if exists cascade ;

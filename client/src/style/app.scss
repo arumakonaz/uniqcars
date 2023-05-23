@@ -1,0 +1,94 @@
+// Define variable defaults
+$body-bg: #000000;
+$body-color: #000000;
+
+$dark: rgba(25, 26, 31, 0.9) !default;
+$secondary: #828282 !default;
+$yiq-text-dark: #828282 !default;
+$primary: rgba(109, 78, 234, 0.071) !default;
+$info: #8061FF !default;
+
+// import inter font from google fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+$font-family-base: 'Inter', sans-serif !default;
+$font-family-sans-serif: 'Inter', sans-serif !default;
+$font-family-monospace: 'Inter', sans-serif !default;
+
+// Then import Bootstrap and BootstrapVue SCSS files (order is important)
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap-vue/src/index.scss';
+
+.toast:not(.show) {
+  display: block;
+}
+
+.full-vertical {
+  min-height: 100vh;
+}
+
+.uniq-btn {
+  background: linear-gradient(90deg, #3F82E1 0%, #7A3FED 100%);
+}
+
+.dropdown-toggle {
+  a {
+    font-weight: normal !important;
+  }
+}
+
+.dropdown-menu {
+  background-color: $dark !important;
+
+  .dropdown-item {
+    color: #fff !important;
+    &:hover {
+      background-color: $primary !important;
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.login-register-form-container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.login-register-form {
+  min-width: 60%;
+  background-color: $dark;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 575.98px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    padding: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    padding: 5rem;
+  }
+}
+
+.hover-link {
+  cursor: pointer;
+}
+
+.page-item {
+  button {
+    background-color: $dark;
+    color: $white;
+  }
+
+  .active button {
+    background-color: $info;
+    color: $white;
+  }
+}

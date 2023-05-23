@@ -1,0 +1,1 @@
+drop index IDX_UNIQCARS_DIC_ITEM_TYPE_UK_CODE ;

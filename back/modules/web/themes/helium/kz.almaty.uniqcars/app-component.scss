@@ -1,0 +1,6 @@
+@import "helium-ext";
+
+@mixin kz_almaty_uniqcars {
+  @include kz_almaty_uniqcars-helium-ext;
+
+}

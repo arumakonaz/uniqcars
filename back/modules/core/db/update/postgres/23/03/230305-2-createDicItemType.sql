@@ -1,0 +1,1 @@
+create unique index IDX_UNIQCARS_DIC_ITEM_TYPE_UK_CODE on UNIQCARS_DIC_ITEM_TYPE (CODE) where DELETE_TS is null ;

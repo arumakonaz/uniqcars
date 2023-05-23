@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://userExtEdit.caption"
+        focusComponent="form"
+        messagesPack="kz.almaty.uniqcars.web.screens.userext">
+    <data>
+        <instance id="userExtDc"
+                  class="kz.almaty.uniqcars.entity.UserExt">
+            <view extends="_local">
+                <property name="image" view="_minimal"/>
+                <property name="bankCards" view="_minimal">
+                    <property name="number"/>
+                    <property name="expireDate"/>
+                    <property name="nameOnCard"/>
+                </property>
+            </view>
+            <loader/>
+            <collection id="bankCardDs" property="bankCards"/>
+        </instance>
+    </data>
+    <dialogMode height="800px"
+                width="800px" forceDialog="true"/>
+    <layout expand="scrollBox" spacing="true">
+        <scrollBox id="scrollBox" spacing="true">
+            <hbox id="mainHbox" spacing="true">
+                <groupBox height="AUTO" id="imageGroupBox"
+                          width="AUTO" align="MIDDLE_CENTER">
+                    <vbox id="imageVbox">
+                        <image id="imageDoubleClick"
+                               align="MIDDLE_CENTER"
+                               height="200px"
+                               dataContainer="userExtDc"
+                               scaleMode="SCALE_DOWN" property="image"
+                               width="250px">
+                            <theme path="images/platform-logo.png"/>
+                        </image>
+                        <form id="form_1" dataContainer="userExtDc" captionPosition="TOP">
+                            <column id="column">
+                                <upload id="imageField"
+                                        caption=""
+                                        showFileName="false"
+                                        property="image"
+                                        fileStoragePutMode="IMMEDIATE"
+                                        showClearButton="true"/>
+                            </column>
+                        </form>
+                    </vbox>
+
+                    <buttonsPanel/>
+                </groupBox>
+
+                <form id="form" dataContainer="userExtDc">
+                    <column width="350px">
+                        <textField id="loginField" property="login"/>
+                        <textField id="firstNameField" property="firstName"/>
+                        <textField id="lastNameField" property="lastName"/>
+                        <textField id="emailField" property="email"/>
+                        <currencyField id="bonusField" property="bonus" currency="Тг"/>
+                    </column>
+                </form>
+            </hbox>
+
+            <groupBox id="bankCardsBox" caption="msg://bankCards" width="100%" height="100%">
+                <table dataContainer="bankCardDs" id="bankCardsTable" width="100%">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="nameOnCard"/>
+                        <column id="expireDate"/>
+                        <column id="number"/>
+                    </columns>
+                    <buttonsPanel>
+                        <button id="createBtn" action="bankCardsTable.create"/>
+                        <button id="editBtn" action="bankCardsTable.edit"/>
+                        <button id="removeBtn" action="bankCardsTable.remove"/>
+                    </buttonsPanel>
+                    <rows/>
+                </table>
+            </groupBox>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

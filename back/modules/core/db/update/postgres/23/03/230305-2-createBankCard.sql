@@ -1,0 +1,2 @@
+alter table UNIQCARS_BANK_CARD add constraint FK_UNIQCARS_BANK_CARD_ON_USER foreign key (USER_ID) references SEC_USER(ID);
+create index IDX_UNIQCARS_BANK_CARD_ON_USER on UNIQCARS_BANK_CARD (USER_ID);

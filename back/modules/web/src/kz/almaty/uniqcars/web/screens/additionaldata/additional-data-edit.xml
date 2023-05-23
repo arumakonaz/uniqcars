@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://additionalDataEdit.caption"
+        focusComponent="form"
+        messagesPack="kz.almaty.uniqcars.web.screens.additionaldata">
+    <data>
+        <instance id="additionalDataDc"
+                  class="kz.almaty.uniqcars.entity.AdditionalData">
+            <view extends="_local">
+                <property name="type" view="_minimal">
+                    <property name="name"/>
+                </property>
+                <property name="images" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+        <collection id="dicAdditionalTypesDc"
+                    class="kz.almaty.uniqcars.entity.DicAdditionalType">
+            <view extends="_local"/>
+            <loader id="dicAdditionalTypesDl">
+                <query>
+                    <![CDATA[select e from uniqcars_DicAdditionalType e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="AUTO"
+                width="400AUTOpx" forceDialog="true"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="additionalDataDc">
+            <column width="350px">
+                <lookupField id="typeField" property="type" required="true"
+                             optionsContainer="dicAdditionalTypesDc"/>
+                <textArea id="valueRuField" property="valueRu" required="true"/>
+                <textArea id="valueKzField" property="valueKz"/>
+                <textArea id="valueEnField" property="valueEn"/>
+            </column>
+        </form>
+
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

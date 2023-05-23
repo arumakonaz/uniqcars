@@ -1,0 +1,2 @@
+alter table UNIQCARS_ORDER add constraint FK_UNIQCARS_ORDER_ON_USER_EXT foreign key (USER_EXT_ID) references SEC_USER(ID);
+create index IDX_UNIQCARS_ORDER_ON_USER_EXT on UNIQCARS_ORDER (USER_EXT_ID);

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://partnerEdit.caption"
+        focusComponent="mainVbox"
+        messagesPack="kz.almaty.uniqcars.web.screens.partner">
+    <data>
+        <instance id="partnerDc"
+                  class="kz.almaty.uniqcars.entity.Partner">
+            <view extends="partner-withDetailsView"/>
+            <collection id="mediaListDc" property="mediaList"/>
+            <collection id="modelRangeListDc" property="modelRangeList"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="100%"
+                width="100%"/>
+    <layout expand="editActions" spacing="true">
+        <vbox id="mainVbox" spacing="true">
+            <hbox id="topHbox" spacing="true">
+                <groupBox height="AUTO" id="imageGroupBox"
+                          width="AUTO" align="MIDDLE_CENTER">
+                    <vbox id="imageVbox">
+                        <image id="imageDoubleClick"
+                               align="MIDDLE_CENTER"
+                               height="200px"
+                               dataContainer="partnerDc"
+                               scaleMode="SCALE_DOWN" property="image"
+                               width="250px">
+                            <theme path="images/platform-logo.png"/>
+                        </image>
+                        <form id="form_1" dataContainer="partnerDc" captionPosition="TOP">
+                            <column id="column">
+                                <upload id="imageField"
+                                        caption=""
+                                        showFileName="false"
+                                        property="image"
+                                        fileStoragePutMode="IMMEDIATE"
+                                        showClearButton="true"/>
+                            </column>
+                        </form>
+                    </vbox>
+                </groupBox>
+
+                <form id="form" dataContainer="partnerDc">
+                    <column width="350px">
+                        <textField id="nameField" property="name"/>
+                        <textField id="yearField" property="year"/>
+                        <lookupField id="locationField" property="location"/>
+                    </column>
+                </form>
+
+            </hbox>
+            <tabSheet id="mainTabSheet">
+                <tab id="mediaTab" spacing="true" caption="msg://media">
+                    <groupTable id="mediaListTable"
+                                width="100%"
+                                dataContainer="mediaListDc">
+                        <actions>
+                            <action id="create" type="create"/>
+                            <action id="edit" type="edit"/>
+                            <action id="remove" type="remove"/>
+                        </actions>
+                        <columns>
+                            <column id="name"/>
+                            <column id="location"/>
+                            <column id="date"/>
+                        </columns>
+                        <rowsCount/>
+                        <buttonsPanel id="buttonsPanel"
+                                      alwaysVisible="true">
+                            <button id="createBtn" action="mediaListTable.create"/>
+                            <button id="editBtn" action="mediaListTable.edit"/>
+                            <button id="removeBtn" action="mediaListTable.remove"/>
+                        </buttonsPanel>
+                    </groupTable>
+                </tab>
+
+                <tab id="modelRangeTab" spacing="true" caption="msg://modelRange">
+                    <groupTable id="modelRangeTable"
+                                width="100%"
+                                dataContainer="modelRangeListDc">
+                        <actions>
+                            <action id="create" type="create"/>
+                            <action id="edit" type="edit"/>
+                            <action id="remove" type="remove"/>
+                        </actions>
+                        <columns>
+                            <column id="name"/>
+                            <column id="price"/>
+                        </columns>
+                        <rowsCount/>
+                        <buttonsPanel id="buttonsModelPanel"
+                                      alwaysVisible="true">
+                            <button id="createModelBtn" action="modelRangeTable.create"/>
+                            <button id="editModelBtn" action="modelRangeTable.edit"/>
+                            <button id="removeModelBtn" action="modelRangeTable.remove"/>
+                        </buttonsPanel>
+                    </groupTable>
+                </tab>
+            </tabSheet>
+
+        </vbox>
+
+
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

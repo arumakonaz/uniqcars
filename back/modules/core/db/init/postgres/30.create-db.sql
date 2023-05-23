@@ -1,0 +1,74 @@
+INSERT INTO UNIQCARS_DIC_ITEM_TYPE (
+    ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY,
+    NAME_RU, CODE, NAME_KZ, NAME_EN
+) VALUES (
+    'f1f3e3e7-177c-43bb-bd3e-37c46f7d9dd9',
+    1,
+    CURRENT_TIMESTAMP,
+    'admin',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    'Аксессуары',
+    'ACCESSORIES',
+    'Машинаның керек-жарақтары',
+    'Accessories'
+)^
+
+INSERT INTO UNIQCARS_DIC_ADDITIONAL_TYPE (
+    ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY,
+    NAME_RU, CODE, NAME_KZ, NAME_EN, ORDER_
+) VALUES (
+    '123e4567-e89b-12d3-a456-426655440000',
+    1,
+    CURRENT_TIMESTAMP,
+    'admin',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    'Город',
+    'CITY',
+    'Кала',
+    'City',
+    1
+)^
+
+INSERT INTO UNIQCARS_DIC_ADDITIONAL_TYPE (
+    ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY,
+    NAME_RU, CODE, NAME_KZ, NAME_EN, ORDER_
+) VALUES (
+    '123e4567-e89b-12d3-a456-426655440001',
+    1,
+    CURRENT_TIMESTAMP,
+    'admin',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    'Руль',
+    'WHEEL',
+    'Руль дөңгелегі',
+    'Wheel',
+    2
+)^
+
+INSERT INTO UNIQCARS_DIC_ADDITIONAL_TYPE (
+    ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY,
+    NAME_RU, CODE, NAME_KZ, NAME_EN, ORDER_
+) VALUES (
+    '123e4567-e89b-12d3-a456-426655440002',
+    1,
+    CURRENT_TIMESTAMP,
+    'admin',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    'Цвет',
+    'COLOR',
+    'Түс',
+    'Color',
+    3
+)^

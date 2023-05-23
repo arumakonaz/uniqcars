@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="uniqcars_UserExt" name="userExt-EditView" extends="user.edit">
+        <property name="image" view="_minimal"/>
+        <property name="bonus"/>
+        <property name="bankCards" view="_minimal">
+            <property name="number"/>
+            <property name="expireDate"/>
+            <property name="nameOnCard"/>
+        </property>
+    </view>
+    <view entity="uniqcars_Item" name="item-getAllview" extends="_local">
+        <property name="images" view="_minimal"/>
+        <property name="additionalDatas" view="_minimal">
+            <property name="valueRu"/>
+            <property name="valueKz"/>
+            <property name="valueEn"/>
+            <property name="value"/>
+            <property name="name"/>
+            <property name="type" view="_minimal">
+                <property name="order"/>
+                <property name="name"/>
+            </property>
+        </property>
+    </view>
+    <view entity="uniqcars_Car" name="car-editView" extends="_local">
+        <property name="images" view="_minimal"/>
+        <property name="additionalDatas" view="_minimal">
+            <property name="type" view="_minimal"/>
+            <property name="valueRu"/>
+            <property name="valueKz"/>
+            <property name="valueEn"/>
+        </property>
+    </view>
+    <view entity="uniqcars_Car" name="car-getAllView" extends="_local">
+        <property name="images" view="_minimal"/>
+        <property name="additionalDatas" view="_minimal">
+            <property name="type" view="_minimal">
+                <property name="order"/>
+            </property>
+            <property name="valueRu"/>
+            <property name="valueKz"/>
+            <property name="valueEn"/>
+        </property>
+    </view>
+    <view entity="uniqcars_Partner" name="partner-getAllView" extends="_local">
+        <property name="image" view="_minimal"/>
+    </view>
+    <view entity="uniqcars_Partner" name="partner-withDetailsView" extends="_local">
+        <property name="image" view="_minimal"/>
+        <property name="modelRangeList" view="_minimal">
+            <property name="image" view="_minimal"/>
+            <property name="price"/>
+        </property>
+        <property name="mediaList" view="_minimal">
+            <property name="image" view="_minimal"/>
+            <property name="location"/>
+            <property name="date"/>
+        </property>
+    </view>
+    <view entity="uniqcars_Order" name="order-carView" extends="_local">
+        <property name="car" view="_minimal">
+            <property name="price"/>
+        </property>
+    </view>
+</views>

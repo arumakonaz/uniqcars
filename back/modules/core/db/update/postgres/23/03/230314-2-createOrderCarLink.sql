@@ -1,0 +1,2 @@
+alter table UNIQCARS_ORDER_CAR_LINK add constraint FK_ORDCAR_ON_ORDER foreign key (ORDER_ID) references UNIQCARS_ORDER(ID);
+alter table UNIQCARS_ORDER_CAR_LINK add constraint FK_ORDCAR_ON_CAR foreign key (CAR_ID) references UNIQCARS_CAR(ID);

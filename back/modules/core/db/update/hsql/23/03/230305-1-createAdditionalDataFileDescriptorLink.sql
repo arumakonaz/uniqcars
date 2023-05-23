@@ -1,0 +1,5 @@
+create table UNIQCARS_ADDITIONAL_DATA_FILE_DESCRIPTOR_LINK (
+    ADDITIONAL_DATA_ID varchar(36) not null,
+    FILE_DESCRIPTOR_ID varchar(36) not null,
+    primary key (ADDITIONAL_DATA_ID, FILE_DESCRIPTOR_ID)
+);

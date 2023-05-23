@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://additionalDataBrowse.caption"
+        focusComponent="additionalDatasTable"
+        messagesPack="kz.almaty.uniqcars.web.screens.additionaldata">
+    <data readOnly="true">
+        <collection id="additionalDatasDc"
+                    class="kz.almaty.uniqcars.entity.AdditionalData">
+            <view extends="_local">
+                <property name="type" view="_minimal">
+                    <property name="name"/>
+                </property>
+                <property name="images" view="_minimal"/>
+            </view>
+            <loader id="additionalDatasDl">
+                <query>
+                    <![CDATA[select e from uniqcars_AdditionalData e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="additionalDatasTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="additionalDatasTable"
+                dataLoader="additionalDatasDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="additionalDatasTable"
+                    width="100%"
+                    dataContainer="additionalDatasDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="nameRu"/>
+                <column id="nameKz"/>
+                <column id="nameEn"/>
+                <column id="name"/>
+                <column id="type"/>
+                <column id="valueRu"/>
+                <column id="valueKz"/>
+                <column id="valueEn"/>
+                <column id="value"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="additionalDatasTable.create"/>
+                <button id="editBtn" action="additionalDatasTable.edit"/>
+                <button id="removeBtn" action="additionalDatasTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

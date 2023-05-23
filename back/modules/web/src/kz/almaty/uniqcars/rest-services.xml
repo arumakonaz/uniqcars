@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://schemas.haulmont.com/cuba/rest-services-v2.xsd">
+    <service name="uniqcars_IntegrationService">
+        <method name="getItems" anonymousAllowed="true" httpMethod="GET">
+            <param name="type" type="java.lang.String"/>
+            <param name="page" type="java.lang.Integer"/>
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getItemById" anonymousAllowed="true" httpMethod="GET">
+            <param name="itemId" type="java.util.UUID"/>
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="sendOtpCode" anonymousAllowed="true" httpMethod="GET">
+            <param name="email" type="java.lang.String"/>
+        </method>
+        <method name="isOtpValid" anonymousAllowed="true" httpMethod="GET">
+            <param name="otpCode" type="java.lang.Integer"/>
+            <param name="email" type="java.lang.String"/>
+        </method>
+        <method name="renewPassword" anonymousAllowed="true" httpMethod="POST">
+            <param name="userPojo"/>
+        </method>
+        <method name="getCars" anonymousAllowed="true" httpMethod="GET">
+            <param name="page" type="java.lang.Integer"/>
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getFavCars" anonymousAllowed="true" httpMethod="GET">
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getCars" anonymousAllowed="true" httpMethod="GET">
+            <param name="page" type="java.lang.Integer"/>
+            <param name="locale" type="java.lang.String"/>
+            <param name="filter" type="java.lang.String"/>
+        </method>
+        <method name="getCarById" anonymousAllowed="true" httpMethod="GET">
+            <param name="carId" type="java.util.UUID"/>
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getUser" httpMethod="GET"/>
+        <method name="updateUser" httpMethod="POST">
+            <param name="userPojo" type="kz.almaty.uniqcars.entity.pojo.UserPojo"/>
+        </method>
+        <method name="createBankCard" httpMethod="POST">
+            <param name="bankCardPojo" type="kz.almaty.uniqcars.entity.pojo.BankCardPojo"/>
+        </method>
+        <method name="removeBankCard" httpMethod="POST">
+            <param name="bankCardPojo" type="kz.almaty.uniqcars.entity.pojo.BankCardPojo"/>
+        </method>
+        <method name="getPartners" httpMethod="GET" anonymousAllowed="true">
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getPartnerById" httpMethod="GET" anonymousAllowed="true">
+            <param name="partnerId" type="java.util.UUID"/>
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="getLocations" httpMethod="GET" anonymousAllowed="true">
+            <param name="locale" type="java.lang.String"/>
+        </method>
+        <method name="createOrder" httpMethod="GET">
+            <param name="carId" type="java.util.UUID"/>
+            <param name="useBonus" type="java.lang.Boolean"/>
+        </method>
+        <method name="checkOrder" httpMethod="GET">
+            <param name="approveLink" type="java.lang.String"/>
+        </method>
+        <method name="sendEmail" httpMethod="POST" anonymousAllowed="true">
+            <param name="emailPojo" type="kz.almaty.uniqcars.entity.pojo.EmailPojo"/>
+        </method>
+    </service>
+</services>
+

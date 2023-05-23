@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://mediaEdit.caption"
+        focusComponent="form"
+        messagesPack="kz.almaty.uniqcars.web.screens.media">
+    <data>
+        <instance id="mediaDc"
+                  class="kz.almaty.uniqcars.entity.Media">
+            <view extends="_local">
+                <property name="image" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="AUTO"
+                width="AUTO" forceDialog="true"/>
+    <layout expand="editActions" spacing="true">
+
+        <form id="form" dataContainer="mediaDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+                <lookupField id="locationField" property="location"/>
+                <dateField id="dateField" property="date"/>
+            </column>
+        </form>
+
+        <groupBox height="AUTO" id="imageGroupBox"
+                  width="AUTO" align="MIDDLE_CENTER">
+            <vbox id="imageVbox">
+                <image id="imageDoubleClick"
+                       align="MIDDLE_CENTER"
+                       height="200px"
+                       dataContainer="mediaDc"
+                       scaleMode="SCALE_DOWN" property="image"
+                       width="250px">
+                    <theme path="images/platform-logo.png"/>
+                </image>
+                <form id="form_1" dataContainer="mediaDc" captionPosition="TOP">
+                    <column id="column">
+                        <upload id="imageField"
+                                caption=""
+                                showFileName="false"
+                                property="image"
+                                fileStoragePutMode="IMMEDIATE"
+                                showClearButton="true"/>
+                    </column>
+                </form>
+            </vbox>
+        </groupBox>
+
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

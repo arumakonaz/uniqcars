@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://dicItemTypeEdit.caption"
+        focusComponent="form"
+        messagesPack="kz.almaty.uniqcars.web.screens.dicitemtype">
+    <data>
+        <instance id="dicItemTypeDc"
+                  class="kz.almaty.uniqcars.entity.DicItemType">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="AUTO"
+                width="AUTO" forceDialog="true"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="dicItemTypeDc">
+            <column width="350px">
+                <textArea id="nameRuField" property="nameRu" rows="5" required="true"/>
+                <textArea id="nameKzField" property="nameKz" rows="5"/>
+                <textArea id="nameEnField" property="nameEn" rows="5"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

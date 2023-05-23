@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://carEdit.caption"
+        focusComponent="form"
+        messagesPack="kz.almaty.uniqcars.web.screens.car">
+    <data>
+        <instance id="carDc"
+                  class="kz.almaty.uniqcars.entity.Car">
+            <view extends="_local">
+                <property name="images" view="_minimal"/>
+                <property name="additionalDatas" view="_local"/>
+            </view>
+            <loader/>
+            <collection id="imagesDc" property="images"/>
+            <collection id="additionalDataDc" property="additionalDatas"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox" spacing="true">
+        <scrollBox id="scrollBox" spacing="true">
+            <groupBox>
+                <form id="nameForm" dataContainer="carDc">
+                    <column width="350px">
+                        <textArea id="nameRuField" property="nameRu" required="true"/>
+                    </column>
+                    <column width="500px">
+                        <resizableTextArea id="descriptionRuField" property="descriptionRu"
+                                           required="true" rows="10"/>
+                    </column>
+                </form>
+            </groupBox>
+
+
+            <groupBox caption="msg://mainInfo" collapsable="true">
+
+                <form id="form" dataContainer="carDc">
+                    <column width="350px">
+                        <currencyField id="priceField" property="price" required="true" currency="Тг"/>
+                        <lookupField id="engineTypeField" property="engineType" required="true"/>
+                        <textField id="mileageField" property="mileage" required="true"/>
+                    </column>
+                    <column width="350px">
+                        <textField id="yearField" property="year"/>
+                        <lookupField id="transmissionField" property="transmission" required="true"
+                                     optionsEnum="kz.almaty.uniqcars.entity.Transmission"/>
+                        <textField id="displacementField" property="displacement" required="true"/>
+                    </column>
+                    <column width="350px">
+
+                        <lookupField id="locationField" property="location"
+                                     optionsEnum="kz.almaty.uniqcars.entity.Location" required="true"/>
+                        <lookupField id="chasisTypeField" property="chasisType"
+                                     optionsEnum="kz.almaty.uniqcars.entity.ChasisType" required="true"/>
+                        <checkBox id="isFavouriteField" property="isFavourite"/>
+                    </column>
+                </form>
+            </groupBox>
+            <groupBox caption="msg://nameValue" collapsable="true" collapsed="true">
+                <form id="nameLocalForm" dataContainer="carDc">
+                    <column width="350px">
+                        <textArea id="nameKzField" property="nameKz" rows="5"/>
+                        <textArea id="nameEnField" property="nameEn" rows="5"/>
+                    </column>
+                    <column width="350px">
+                        <textArea id="descriptionKzField" property="descriptionKz" rows="5"/>
+                        <textArea id="descriptionEnField" property="descriptionEn" rows="5"/>
+                    </column>
+                </form>
+            </groupBox>
+
+
+            <tabSheet>
+                <tab id="additionalDatasTab" caption="msg://additionalDatas">
+                    <groupBox id="additionalDatas">
+                        <table id="additionalDatasTable" dataContainer="additionalDataDc" width="100%" height="200px">
+                            <actions>
+                                <action id="create" type="create"/>
+                                <action id="edit" type="edit"/>
+                                <action id="remove" type="remove"/>
+                            </actions>
+                            <columns>
+                                <column id="type"/>
+                                <column id="value"/>
+                            </columns>
+                            <buttonsPanel>
+                                <button action="additionalDatasTable.create" stylename="friendly"/>
+                                <button action="additionalDatasTable.edit"/>
+                                <button action="additionalDatasTable.remove" stylename="danger"/>
+                            </buttonsPanel>
+                        </table>
+                    </groupBox>
+                </tab>
+                <tab id="imagesBoxTab" caption="msg://kz.almaty.uniqcars.entity/Item.images">
+                    <groupBox id="imagesBox">
+                        <table id="imagesTable" dataContainer="imagesDc" width="100%" height="200px">
+                            <actions>
+                                <action id="remove" type="remove"/>
+                            </actions>
+                            <columns>
+                                <column id="name"/>
+                                <column id="createDate"/>
+                            </columns>
+                            <buttonsPanel>
+                                <multiUpload id="multiUpload"
+                                             icon="UPLOAD"
+                                             permittedExtensions=".png,.jpg,.pdf"/>
+                                <button action="imagesTable.remove"/>
+                            </buttonsPanel>
+                        </table>
+                        <hbox>
+                            <hbox id="imageWrapperLayout"
+                                  height="100%"
+                                  width="100%"
+                                  spacing="true">
+                            </hbox>
+                        </hbox>
+                    </groupBox>
+                </tab>
+            </tabSheet>
+
+
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<metadata xmlns="http://schemas.haulmont.com/cuba/metadata.xsd">
+
+    <metadata-model root-package="kz.almaty.uniqcars" namespace="uniqcars">
+        <class>kz.almaty.uniqcars.entity.pojo.ItemPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.ItemsPojoList</class>
+        <class>kz.almaty.uniqcars.entity.pojo.AdditionalDataPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.ImagePojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.UserPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.CarPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.CarPojoList</class>
+        <class>kz.almaty.uniqcars.entity.pojo.BankCardPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.PartnerPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.PartnerPojoList</class>
+        <class>kz.almaty.uniqcars.entity.pojo.OrderPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.LocationListPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.LocationPojo</class>
+        <class>kz.almaty.uniqcars.entity.pojo.MediaPojo</class>
+        <class>kz.almaty.uniqcars.entity.ModelRangePojo</class>
+    </metadata-model>
+
+</metadata>

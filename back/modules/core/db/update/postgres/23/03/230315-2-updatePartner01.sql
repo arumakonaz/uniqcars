@@ -1,0 +1,2 @@
+alter table UNIQCARS_PARTNER add constraint FK_UNIQCARS_PARTNER_ON_IMAGE foreign key (IMAGE_ID) references SYS_FILE(ID);
+create index IDX_UNIQCARS_PARTNER_ON_IMAGE on UNIQCARS_PARTNER (IMAGE_ID);

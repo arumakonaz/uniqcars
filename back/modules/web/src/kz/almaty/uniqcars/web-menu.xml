@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <item screen="uniqcars_Car.browse" caption="mainMsg://menu_config.uniqcars_Car.browse"/>
+    <item screen="uniqcars_Partner.browse" caption="mainMsg://menu_config.uniqcars_Partner.browse"/>
+    <item screen="uniqcars_UserExt.browse" caption="mainMsg://menu_config.uniqcars_UserExt.browse"/>
+    <item screen="uniqcars_ItemAccessories.browse" caption="mainMsg://menu_config.uniqcars_ItemAccessories.browse"/>
+
+    <item screen="uniqcars_DicAdditionalType.browse"
+          caption="mainMsg://menu_config.uniqcars_DicAdditionalType.browse"/>
+    <item screen="uniqcars_DicItemType.browse" caption="mainMsg://menu_config.uniqcars_DicItemType.browse"/>
+    <menu id="administration">
+        <item id="sec$User.browse"/>
+        <item id="sec$Group.browse"/>
+        <item id="sec$Role.browse"/>
+        <separator/>
+        <item id="sys$Category.browse"/>
+        <item id="sec$UserSessionEntity.browse"/>
+        <item id="sys$LockInfo.browse"/>
+        <item id="sys$FileDescriptor.browse"/>
+        <item id="sys$ScheduledTask.browse"/>
+        <item id="entityRestore"/>
+        <item id="entityInspector.browse"/>
+        <item id="appProperties"/>
+        <item id="jmxConsole"/>
+        <separator/>
+        <item id="entityLog"/>
+        <item id="sec$SessionLogEntry.browse"/>
+        <item id="sys$SendingMessage.browse"/>
+        <item id="serverLog"/>
+        <item id="screenProfiler"/>
+        <item id="performanceStatistics"/>
+
+    </menu>
+</menu-config>
